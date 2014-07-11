@@ -4,8 +4,8 @@ function[h] = dynamicSlider(varargin)
 
 callbackIndex = find(strcmp(varargin, 'Callback'));
 if isempty(callbackIndex)
-    throw(MException('dynamicSlider:IllegalArgument', ['Must provide a '
-        'callback. If you do not need a callback function, use '
+    throw(MException('dynamicSlider:IllegalArgument', ['Must provide a '...
+        'callback. If you do not need a callback function, use '...
         '''uicontrol'' with ''Style'' as ''slider''.']));
 end
 callback = varargin{callbackIndex+1};
@@ -13,7 +13,9 @@ varargin(callbackIndex:callbackIndex+1) = [];
 
 styleIndex = find(strcmp(varargin, 'Style'));
 if ~isempty(styleIndex)
-    disp('''Style'' must be ''slider''. Ignoring provided ''Style''');
+    if ~strcmp(varargin{styleIndex+1}, 'slider')
+        disp('''Style'' must be ''slider''. Ignoring provided ''Style''');
+    end
     varargin(styleIndex:styleIndex+1) = [];
 end
 

@@ -1,3 +1,4 @@
+function[samples] = sample(blockSize, mixtures)
 %------------------------------------------------------------------------
 %
 % sample.m:
@@ -11,8 +12,6 @@
 %   samples: The samples
 %
 %------------------------------------------------------------------------
-
-function[samples] = sample(blockSize, mixtures)
 
 % Get the number of mixtures and their length
 numMixtures = size(mixtures, 1);

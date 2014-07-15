@@ -1,6 +1,8 @@
 function[h] = dynamicSlider(varargin)
 % DYNAMICSLIDER Creates a new slider uicontrol that executes its callback
-% continuously
+% continuously.
+%
+% See also UICONTROL.
 
 callbackIndex = find(strcmp(varargin, 'Callback'));
 if isempty(callbackIndex)

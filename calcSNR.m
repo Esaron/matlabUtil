@@ -1,3 +1,4 @@
+function[snrOut] = calcSNR(source1, source2)
 %------------------------------------------------------------------------
 %
 % calcSNR.m:
@@ -12,7 +13,6 @@
 %
 %------------------------------------------------------------------------
 
-function[snrOut] = calcSNR(source1, source2)
     noise = abs(source2 - source1);
     snrOut = snr(source2, noise);
 end

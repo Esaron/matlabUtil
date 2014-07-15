@@ -1,3 +1,4 @@
+function[TSamples] = msToSamples(Tms, fs)
 %------------------------------------------------------------------------
 %
 % msToSamples.m:
@@ -12,8 +13,6 @@
 %   TOut: A square matrix of time delays in samples
 %
 %------------------------------------------------------------------------
-
-function[TSamples] = msToSamples(Tms, fs)
 
 % samples = ms * frequency/1000
 TSamples = ceil(Tms.*(fs/1000));

@@ -1,3 +1,4 @@
+function[loglike_X] = loglike(A, S)
 %------------------------------------------------------------------------
 %
 % loglike.m:
@@ -12,8 +13,6 @@
 %   loglike_X: The log likelihood
 %
 %------------------------------------------------------------------------
-
-function[loglike_X] = loglike(A, S)
 
 % Calculate determinant of A
 detA = det(A);

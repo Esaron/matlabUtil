@@ -1,3 +1,4 @@
+function[AShifted] = loopShift(A)
 %------------------------------------------------------------------------
 %
 % loopShift.m:
@@ -13,8 +14,6 @@
 %   AShifted: The shifted matrix
 %
 %------------------------------------------------------------------------
-
-function[AShifted] = loopShift(A)
 
 % A is NOT assumed to be square (but still transposed in the case of BSS)
 

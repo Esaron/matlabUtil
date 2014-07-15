@@ -1,3 +1,4 @@
+function[samples] = sampleContiguously(blockSize, mixtures)
 %------------------------------------------------------------------------
 %
 % sampleContiguously.m:
@@ -12,8 +13,6 @@
 %   samples: The samples
 %
 %------------------------------------------------------------------------
-
-function[samples] = sampleContiguously(blockSize, mixtures)
 
 % We are randomly sampling the starting index for a block
 validIndices = size(mixtures, 2) - blockSize;

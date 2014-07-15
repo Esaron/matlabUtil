@@ -1,3 +1,4 @@
+function[W] = whiten(X, epsilon)
 %------------------------------------------------------------------------
 %
 % whiten.m:
@@ -16,8 +17,6 @@
 %       /fileexchange/34471-data-matrix-whitening/content/whiten.m
 %
 %------------------------------------------------------------------------
-
-function[W] = whiten(X, epsilon)
 
 if ~exist('epsilon','var')
     epsilon = 0.0001;

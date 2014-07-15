@@ -1,3 +1,4 @@
+function[AShifted] = kroneckerSliceShift(A)
 %------------------------------------------------------------------------
 %
 % kroneckerSliceShift.m:
@@ -13,8 +14,6 @@
 %   AShifted: The shifted matrix
 %
 %------------------------------------------------------------------------
-
-function[AShifted] = kroneckerSliceShift(A)
 
 % A is assumed to be square (and transposed in the case of BSS)
 

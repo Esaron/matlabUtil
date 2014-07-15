@@ -1,3 +1,4 @@
+function[SS, AA] = bss(blockSize, X, fs, epsilon, outDir, maxIter, minStep)
 %------------------------------------------------------------------------
 %
 % bss.m:
@@ -20,7 +21,6 @@
 %
 %------------------------------------------------------------------------
 
-function[SS, AA] = bss(blockSize, X, fs, epsilon, outDir, maxIter, minStep)
 
 % Get the number of mixtures and their size
 n = size(X, 1);

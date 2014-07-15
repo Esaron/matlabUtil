@@ -1,3 +1,4 @@
+function[A] = inferA(blockSize, mixtures, aprioriA, epsilon)
 %------------------------------------------------------------------------
 %
 % inferA.m:
@@ -13,8 +14,6 @@
 %   A: The inferred mixing matrix
 %
 %------------------------------------------------------------------------
-
-function[A] = inferA(blockSize, mixtures, aprioriA, epsilon)
 
 % Get number of mixtures
 numMixtures = size(mixtures, 1);

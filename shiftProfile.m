@@ -1,3 +1,4 @@
+function[] = shiftProfile(A, iterations)
 %------------------------------------------------------------------------
 %
 % shiftProfile.m:
@@ -10,7 +11,6 @@
 %
 %------------------------------------------------------------------------
 
-function[] = shiftProfile(A, iterations)
 outDir = 'output/';
 
 % A is assumed to be square for the purposes of comparison

@@ -3,7 +3,8 @@ function[Aout] = normaSort(A)
 %
 % normaSort.m:
 %   Given a matrix, normalize each row so that max is 1, and arrange rows
-%   such that the 1s are along the diagonal.
+%   such that the 1s are along the diagonal.  Linearly comparable in
+%   computational efficiency to matlab's sort().
 %
 % Inputs:
 %   A: The original matrix

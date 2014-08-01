@@ -20,9 +20,13 @@ Y = zeros(n, m);
 U = rand(n, m);
 for i=1:n
     for j=1:m
-        u = U(i, j);
-        Y(i, j) = mu - b*sign(u - 0.5)*log(1 - 2*abs(u));
+        Y(i, j) = uniformToLaplace(mu, b, U(i, j));
     end
 end
+end
+
+function[y] = uniformToLaplace(mu, b, u)
+
+y = mu - b*sign(u - 0.5)*log(1 - 2*abs(u));
 
 end

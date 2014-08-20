@@ -10,7 +10,7 @@ function [A] = randConvMixingMat(n, k)
 %   k: The size of the FIRs
 %
 % Outputs:
-%   A: The scrambled diagonal mixing matrix
+%   A: The n x n x k mixing matrix
 %
 %------------------------------------------------------------------------
 
@@ -19,7 +19,12 @@ mu = 6;
 stddev = 1.5;
 for i=1:k
     % Create random normal vector
-    A(:,:,i) = (mu + stddev.*randn(n))./i;
+    A(:,:,i) = (mu + stddev.*randn(n))./(reverb(i));
 end
 
+end
+
+% Reverberation dropoff function
+function [y] = reverb(x)
+y = x^2;
 end

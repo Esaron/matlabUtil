@@ -17,7 +17,7 @@ function[loglike_X] = loglike(A, S)
 % Calculate determinant of A
 detA = det(A);
 % Calculate P(s)
-Ps = prod(exp(abs(S)), 2);
+Ps = prod(laplacePdf(0, 1, S), 2);
 % Calculate (log) likelihood
 loglike_x = log(Ps/abs(detA));
 % Calculate (log) likelihood of data ensemble

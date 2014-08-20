@@ -19,5 +19,7 @@ function[X, PI, A] = normaSortDemo(n)
 [A PI] = randMixingMat(n);
 % Normalize and sort
 X = normaSort(A);
+% Plot
+imagesc(X);
 
 end

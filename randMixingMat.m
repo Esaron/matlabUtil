@@ -24,8 +24,11 @@ A = PI*aa;
 % Introduce random noise
 % Find minimum magnitude of elements and halve it to avoid exceeding
 % existing elements in all cases.
-b = 0.49*min(abs(nonzeros(A)));
-N = -b + 2*b.*rand(n);
+alpha = 0.45;
+b = alpha*nonzeros(A');
+N = b*ones(1,n).*rand(n);
+nega = 2.*binornd(1, 0.5, n) - 1;
+N = nega.*N;
 A = A + N;
 
 end

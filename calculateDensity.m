@@ -12,30 +12,35 @@ function[px] = calculateDensity()
 %
 %------------------------------------------------------------------------
 
-n = ceil(5*rand) + 1;
-m = 1000*rand;
-mu = zeros(n, 1);
-b = zeros(n, 1);
+srcConst = 4;
+pdfSize = 101;
+n = ceil(srcConst*rand) + 1;
+m = 100000;
+mu = 0;
+spacer = zeros(n, pdfSize);
 S = zeros(n, m);
 for i=1:n
-    mu(i) = 2*rand-1;
-    b(i) = 5*rand;
-    S(i, :) = real(randlaplace(mu(i), b(i), 1, m));
+    b = pdfSize*rand;
+    S(i, :) = real(randlaplace(mu, b, 1, m));
+    stddev = sqrt(2)*b;
+    figure;
+    spacer(i,:) = linspace(-5*stddev, 5*stddev, pdfSize);
+    hist(S(i,:)', spacer(i,:));
+    title(['Source ' num2str(i)]);
 end
-sortS = sort(S, 2);
 A = randMixingMat(n);
+X = A*S;
+for i=1:n
+    figure;
+    hist(X(i,:)', spacer(i, :));
+    title(['Mixture ' num2str(i)]);
+end
 B = inv(A);
 psi = zeros(n, m);
 for i=1:n
-    psi(i, :) = laplacePdf(mu(i), b(i), sortS(i, :));
-    plot(psi(i, :), 'Color','blue');
-    hold on;
+    psi(i, :) = laplacePdf(mu, b(i), S(i, :));
 end
 ps = prod(psi);
 px = abs(det(B))*ps;
-figure;
-plot(ps, 'Color','red');
-hold on;
-plot(px, 'Color','green');
 
 end

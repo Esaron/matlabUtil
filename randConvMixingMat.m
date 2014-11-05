@@ -26,5 +26,5 @@ end
 
 % Reverberation dropoff function
 function [y] = reverb(x)
-y = x^2;
+y = sqrt(x);
 end
